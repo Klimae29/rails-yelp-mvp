@@ -1,0 +1,23 @@
+<div class= "container text-white bg-danger">
+  <%= link_to 'Retour à la liste des restaurants👨🏻‍🍳', restaurants_path%>
+  <%= link_to 'Ajouter un nouveau restaurant➕', new_restaurant_path %>
+</div>
+
+<h1>Restaurant</h1>
+
+<h2><%= @restaurant.name %></h2>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.phone_number %></p>
+<p><%= @restaurant.category %></p>
+
+<h3>Avis:</h3>
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+  <li><%= review.content %>: <%= review.rating %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Ajouter un avis ➕', new_restaurant_review_path(@restaurant) %>
+
+
+

@@ -1,0 +1,17 @@
+<div class= "container text-white bg-primary">
+  <%= link_to 'Retour à la liste des restaurants👨🏻‍🍳', restaurants_path %>
+  <%= link_to 'Ajouter un nouveau restaurant➕', restaurants_path %>
+</div>
+
+
+<h1>Création d'un nouveau restaurant</h1>
+
+<div class= "container w-50">
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name%>
+  <%= f.input :address, placeholder: "Ville"%>
+  <%= f.input :phone_number %>
+  <%= f.input :category, collection: %w(chinese italian japanese french belgian)%>
+  <%= f.submit "Soumettre", class: "btn btn-primary" %>
+<% end %>
+</div>
